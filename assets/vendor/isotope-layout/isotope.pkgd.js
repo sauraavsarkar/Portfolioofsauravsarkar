@@ -1,24 +1,5 @@
-/*!
- * Isotope PACKAGED v3.0.6
- *
- * Licensed GPLv3 for open source use
- * or Isotope Commercial License for commercial use
- *
- * https://isotope.metafizzy.co
- * Copyright 2010-2018 Metafizzy
- */
-
-/**
- * Bridget makes jQuery widgets
- * v2.0.1
- * MIT license
- */
-
-/* jshint browser: true, strict: true, undef: true, unused: true */
-
 ( function( window, factory ) {
-  // universal module definition
-  /*jshint strict: false */ /* globals define, module, require */
+
   if ( typeof define == 'function' && define.amd ) {
     // AMD
     define( 'jquery-bridget/jquery-bridget',[ 'jquery' ], function( jQuery ) {
@@ -152,13 +133,6 @@ return jQueryBridget;
 
 }));
 
-/**
- * EvEmitter v1.1.0
- * Lil' event emitter
- * MIT License
- */
-
-/* jshint unused: true, undef: true, strict: true */
 
 ( function( global, factory ) {
   // universal module definition
@@ -265,14 +239,7 @@ return EvEmitter;
 
 }));
 
-/*!
- * getSize v2.0.3
- * measure size of elements
- * MIT license
- */
 
-/* jshint browser: true, strict: true, undef: true, unused: true */
-/* globals console: false */
 
 ( function( window, factory ) {
   /* jshint strict: false */ /* globals define, module */
@@ -342,12 +309,6 @@ function getZeroSize() {
   return size;
 }
 
-// -------------------------- getStyle -------------------------- //
-
-/**
- * getStyle, get style of element, check for Firefox bug
- * https://bugzilla.mozilla.org/show_bug.cgi?id=548397
- */
 function getStyle( elem ) {
   var style = getComputedStyle( elem );
   if ( !style ) {
@@ -364,11 +325,7 @@ var isSetup = false;
 
 var isBoxSizeOuter;
 
-/**
- * setup
- * check isBoxSizerOuter
- * do on first getSize() rather than on page load for Firefox bug
- */
+
 function setup() {
   // setup once
   if ( isSetup ) {
@@ -376,12 +333,7 @@ function setup() {
   }
   isSetup = true;
 
-  // -------------------------- box sizing -------------------------- //
 
-  /**
-   * Chrome & Safari measure the outer-width on style.width on border-box elems
-   * IE11 & Firefox<29 measures the inner-width
-   */
   var div = document.createElement('div');
   div.style.width = '200px';
   div.style.padding = '1px 2px 3px 4px';
@@ -473,13 +425,7 @@ return getSize;
 
 });
 
-/**
- * matchesSelector v2.0.2
- * matchesSelector( element, '.selector' )
- * MIT license
- */
 
-/*jshint browser: true, strict: true, undef: true, unused: true */
 
 ( function( window, factory ) {
   /*global define: false, module: false */
@@ -527,12 +473,7 @@ return getSize;
 
 }));
 
-/**
- * Fizzy UI utils v2.0.7
- * MIT license
- */
 
-/*jshint browser: true, undef: true, unused: true, strict: true */
 
 ( function( window, factory ) {
   // universal module definition
@@ -712,9 +653,7 @@ utils.docReady = function( callback ) {
   }
 };
 
-// ----- htmlInit ----- //
 
-// http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
 utils.toDashed = function( str ) {
   return str.replace( /(.)([A-Z])/g, function( match, $1, $2 ) {
     return $1 + '-' + $2;
@@ -722,11 +661,7 @@ utils.toDashed = function( str ) {
 };
 
 var console = window.console;
-/**
- * allow user to initialize classes via [data-namespace] or .js-namespace class
- * htmlInit( Widget, 'widgetName' )
- * options are parsed from data-namespace-options
- */
+
 utils.htmlInit = function( WidgetClass, namespace ) {
   utils.docReady( function() {
     var dashedNamespace = utils.toDashed( namespace );
@@ -1073,7 +1008,6 @@ proto.transition = function( args ) {
   // set from styles
   if ( args.from ) {
     this.css( args.from );
-    // force redraw. http://blog.alexmaccaw.com/css-transitions
     var h = this.element.offsetHeight;
     // hack for JSHint to hush about unused var
     h = null;
@@ -1087,8 +1021,7 @@ proto.transition = function( args ) {
 
 };
 
-// dash before all cap letters, including first for
-// WebkitTransform => -webkit-transform
+
 function toDashedAll( str ) {
   return str.replace( /([A-Z])/g, function( $1 ) {
     return '-' + $1.toLowerCase();
@@ -1104,16 +1037,6 @@ proto.enableTransition = function(/* style */) {
     return;
   }
 
-  // make `transition: foo, bar, baz` from style object
-  // HACK un-comment this when enableTransition can work
-  // while a transition is happening
-  // var transitionValues = [];
-  // for ( var prop in style ) {
-  //   // dash-ify camelCased properties like WebkitTransition
-  //   prop = vendorProperties[ prop ] || prop;
-  //   transitionValues.push( toDashedAll( prop ) );
-  // }
-  // munge number to millisecond, to match stagger
   var duration = this.layout.options.transitionDuration;
   duration = typeof duration == 'number' ? duration + 'ms' : duration;
   // enable transition styles
@@ -1324,11 +1247,6 @@ return Item;
 
 }));
 
-/*!
- * Outlayer v2.1.1
- * the brains and guts of a layout library
- * MIT license
- */
 
 ( function( window, factory ) {
   'use strict';
@@ -2500,13 +2418,7 @@ return Item;
 
 }));
 
-/*!
- * Masonry v4.2.1
- * Cascading grid layout library
- * https://masonry.desandro.com
- * MIT License
- * by David DeSandro
- */
+
 
 ( function( window, factory ) {
   // universal module definition
@@ -2740,11 +2652,6 @@ return Item;
 
 }));
 
-/*!
- * Masonry layout mode
- * sub-classes Masonry
- * https://masonry.desandro.com
- */
 
 ( function( window, factory ) {
   // universal module definition
@@ -2939,15 +2846,6 @@ return Vertical;
 
 }));
 
-/*!
- * Isotope v3.0.6
- *
- * Licensed GPLv3 for open source use
- * or Isotope Commercial License for commercial use
- *
- * https://isotope.metafizzy.co
- * Copyright 2010-2018 Metafizzy
- */
 
 ( function( window, factory ) {
   // universal module definition
