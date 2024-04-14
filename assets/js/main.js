@@ -190,6 +190,11 @@
     selector: '.portfolio-lightbox'
   });
 
+
+  const portfolioLightbox1 = GLightbox({
+    selector: '.portfolio-lightbox1'
+  });
+
   /**
    * Portfolio details slider
    */
