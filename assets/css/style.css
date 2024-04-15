@@ -997,7 +997,19 @@ section {
   padding: 10px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+
+input[type=text], textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=button]{
   background: #149ddd;
   border: 0;
   padding: 10px 24px;
@@ -1005,10 +1017,11 @@ section {
   transition: 0.4s;
   border-radius: 4px;
 }
-
-.contact .php-email-form button[type=submit]:hover {
+input[type=button]:hover{
   background: #37b3ed;
 }
+
+
 
 @keyframes animate-loading {
   0% {
