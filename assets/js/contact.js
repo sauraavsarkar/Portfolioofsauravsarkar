@@ -14,7 +14,7 @@ function Send(){
 
     // Proceed with sending the email if all fields are filled
     Email.send({
-        SecureToken: "5924ca43-f20b-4a91-89ec-f49a7031f540",
+        SecureToken: "1ec8de68-c2ed-43f4-9f02-e673c77f74dd",
         To: 'ovi.raj54@gmail.com',
         From: "ovi.raj54@gmail.com",
         Subject: sub,
