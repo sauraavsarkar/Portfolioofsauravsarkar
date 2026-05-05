@@ -377,7 +377,7 @@
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
               <h4>Assistant Officer</h4>
-              <h5>Aug 2024 - Present</h5>
+              <h5>Aug 2024 - Present <span class="exp-duration" data-start="2024-08-01"></span></h5>
               <p><em>Digital Financial Services (DFS), ICT Division, Head Office,<br>
                   National Credit and Commerce Bank PLC.</em></p>
               <ul>
@@ -402,7 +402,7 @@
 
             <div class="resume-item">
               <h4>Image annotator as a freelancer</h4>
-              <h5>Dec 2020 - Aug 2024</h5>
+              <h5>Dec 2020 - Aug 2024 <span class="exp-duration" data-start="2020-12-01" data-end="2024-08-31"></span></h5>
               <p><em>Acme AI Ltd. , Dhaka, BD </em></p>
               <ul>
                 <li>Contributing to computer vision projects and Integral member of remote team, efficiently
@@ -416,7 +416,7 @@
 
             <div class="resume-item">
               <h4>IT Assistant (Intern)</h4>
-              <h5>Sep 2023 - Apr 2024</h5>
+              <h5>Sep 2023 - Apr 2024 <span class="exp-duration" data-start="2023-09-01" data-end="2024-04-30"></span></h5>
               <p><em>American International University-Bangladesh, Dhaka, BD</em></p>
               <ul>
                 <li>Technical skills I acquired during internship, such as proficiency in operatingsystems (Windows,
@@ -907,7 +907,28 @@
       return age;
     }
 
+    function updateAllExperienceDurations() {
+      const expElements = document.querySelectorAll('.exp-duration');
+      expElements.forEach(el => {
+        const start = new Date(el.dataset.start);
+        const end = el.dataset.end ? new Date(el.dataset.end) : new Date();
+
+        const diffInMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth()) + 1;
+
+        const years = Math.floor(diffInMonths / 12);
+        const months = diffInMonths % 12;
+
+        let durationStr = "(";
+        if (years > 0) durationStr += years + "y ";
+        if (months > 0 || years === 0) durationStr += months + "m";
+        durationStr += ")";
+
+        el.textContent = durationStr;
+      });
+    }
+
     document.getElementById('age').textContent = calculateAge('2000-08-07');
+    updateAllExperienceDurations();
   </script>
 </body>
 
